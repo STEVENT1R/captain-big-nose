@@ -250,12 +250,16 @@ animations = [{
 }]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ptm0g"]
+load_path = "res://.godot/imported/Dead Ground 01.png-1c300ce50a89b3fdba931098708e3a39.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lw8ht"]
+load_path = "res://.godot/imported/Dead Ground 02.png-ec26a94a2694224f68993d9c2058f564.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_d2t37"]
+load_path = "res://.godot/imported/Dead Ground 03.png-03c7260641b79a53359225ff5094f1f2.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6etnh"]
+load_path = "res://.godot/imported/Dead Ground 04.png-9aa43df25b5ac6ad0566a499b5352a11.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2itiv"]
 animations = [{
@@ -894,8 +898,7 @@ shape = SubResource("RectangleShape2D_s4bue")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=756048406]
 offset = Vector2(0, -65)
 zoom = Vector2(3, 3)
-limit_enabled = false
-limit_bottom = 720
+limit_bottom = 1800
 limit_smoothed = true
 position_smoothing_enabled = true
 

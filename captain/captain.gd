@@ -239,5 +239,4 @@ func _die():
 		taking_hit = false
 		die = true
 		animation.play("dead_hit")
-		
 	
