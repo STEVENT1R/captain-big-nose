@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
 
-var speed = 120
-var jump_force = -400
-var gravity = 1000
+var speed = 180
+var jump_force = -300
+var gravity = 800
 
 @export var have_sword = true
 
@@ -28,6 +28,7 @@ var die = false
 
 
 func _ready() -> void:
+	$UI.show()
 	check_state()
 	hitbox = $with_sword/hit_box/floor
 	hitbox.disabled = true
