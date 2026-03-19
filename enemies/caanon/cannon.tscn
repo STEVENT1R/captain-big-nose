@@ -153,6 +153,7 @@ length = 200.0
 size = Vector2(16.772, 15.1675)
 
 [node name="cannon" type="CharacterBody2D" unique_id=290514012 node_paths=PackedStringArray("marker")]
+scale = Vector2(-1, 1)
 script = ExtResource("1_gop6w")
 b = ExtResource("2_0u6cy")
 marker = NodePath("ray/Marker2D")

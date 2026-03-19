@@ -13,15 +13,16 @@ var health = 1
 
 
 func _ready() -> void:
+	
 	player = get_tree().get_first_node_in_group("player")
 
 
 func _physics_process(delta: float) -> void:
-
+	print(scale.x)
 	if not is_on_floor():
 		velocity.y += 500 * delta
 	
-	move_and_slide()
+	#move_and_slide()
 
 	if health <= 0:
 		die_()
@@ -44,7 +45,7 @@ func shot():
 func spawn_ball():
 
 	var ball = b.instantiate()
-
+	print(scale.x)
 	if scale.x == 1:
 		ball.dir = 1
 	else:
