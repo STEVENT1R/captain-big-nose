@@ -44,7 +44,7 @@ texture = ExtResource("2_7kqfu")
 [sub_resource type="TileSet" id="TileSet_5comu"]
 sources/1 = SubResource("TileSetAtlasSource_ldvuq")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_75h4b"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cbtop"]
 texture = ExtResource("1_ld1ti")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -226,7 +226,7 @@ texture_region_size = Vector2i(32, 32)
 16:4/0 = 0
 16:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5yfkv"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jhai8"]
 texture = ExtResource("1_ld1ti")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -404,7 +404,7 @@ texture_region_size = Vector2i(32, 32)
 16:4/0 = 0
 16:4/0/modulate = Color(0.30692267, 0.3069227, 0.3069227, 1)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x3rld"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t2xhh"]
 texture = ExtResource("4_5yfkv")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -426,9 +426,9 @@ terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 terrain_set_1/mode = 0
 terrain_set_1/terrain_0/name = "Back"
 terrain_set_1/terrain_0/color = Color(0.13833943, 0.12642786, 0.1264273, 1)
-sources/2 = SubResource("TileSetAtlasSource_75h4b")
-sources/3 = SubResource("TileSetAtlasSource_5yfkv")
-sources/4 = SubResource("TileSetAtlasSource_x3rld")
+sources/2 = SubResource("TileSetAtlasSource_cbtop")
+sources/3 = SubResource("TileSetAtlasSource_jhai8")
+sources/4 = SubResource("TileSetAtlasSource_t2xhh")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s2s7x"]
 animations = [{
@@ -529,7 +529,7 @@ tile_map_data = PackedByteArray("AADr/0EAAAACAAIAAAAAABYAAgAAAAEAAAABABYAAgABAAE
 tile_set = SubResource("TileSet_7kqfu")
 
 [node name="captain" parent="." unique_id=1679501873 instance=ExtResource("2_85jh3")]
-position = Vector2(217, 674)
+position = Vector2(216, 692)
 
 [node name="end_ship" type="Node2D" parent="." unique_id=1839859702]
 
