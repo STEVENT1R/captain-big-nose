@@ -1,0 +1,148 @@
+[gd_scene format=3 uid="uid://dbh0x7ubxixc"]
+
+[ext_resource type="Script" uid="uid://uondrecbxycb" path="res://things/box/box.gd" id="1_wulfc"]
+[ext_resource type="Texture2D" uid="uid://c2l1pvd2qq484" path="res://assets/Treasure Hunters/Merchant Ship/Sprites/Box/Idle/1.png" id="2_34n8v"]
+[ext_resource type="Texture2D" uid="uid://c2qc75gmssbar" path="res://assets/Treasure Hunters/Merchant Ship/Sprites/Box/Destroyed/4.png" id="4_w0fob"]
+[ext_resource type="Texture2D" uid="uid://tdx5wwhh20y4" path="res://assets/Treasure Hunters/Merchant Ship/Sprites/Box/Destroyed/5.png" id="5_bhi1l"]
+[ext_resource type="Texture2D" uid="uid://b358hdbyoilvg" path="res://assets/Treasure Hunters/Merchant Ship/Sprites/Box/Destroyed/3.png" id="6_e7s0c"]
+[ext_resource type="Texture2D" uid="uid://bleqskrrh413i" path="res://assets/Treasure Hunters/Merchant Ship/Sprites/Box/Destroyed/2.png" id="7_aae64"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_k3t3l"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_efqol"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"hit",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_34n8v")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iminy"]
+size = Vector2(25, 18)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_i5rp1"]
+friction = 3.55
+bounce = 4.65
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_smbjh"]
+size = Vector2(17, 7)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ru7pn"]
+friction = 5.0
+bounce = 0.41
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wulfc"]
+size = Vector2(12, 7)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_anhvy"]
+friction = 7.0
+rough = true
+bounce = 9.35
+absorbent = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_75oib"]
+size = Vector2(11, 10)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bi7xf"]
+friction = 5.6
+rough = true
+bounce = 4.48
+absorbent = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6xogm"]
+size = Vector2(8, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vogsj"]
+size = Vector2(23, 17)
+
+[node name="box" type="RigidBody2D" unique_id=1101288323 node_paths=PackedStringArray("distory_pices", "sprite", "distory_pices1", "distory_pices2", "distory_pices3", "distory_pices4", "coll", "coll2", "coll3", "coll4", "collisionShape")]
+physics_material_override = SubResource("PhysicsMaterial_k3t3l")
+script = ExtResource("1_wulfc")
+distory_pices = NodePath("distory")
+sprite = NodePath("AnimatedSprite2D")
+distory_pices1 = NodePath("distory/distory")
+distory_pices2 = NodePath("distory/distory4")
+distory_pices3 = NodePath("distory/distory2")
+distory_pices4 = NodePath("distory/distory3")
+coll = NodePath("distory/distory/CollisionShape2D")
+coll2 = NodePath("distory/distory4/CollisionShape2D")
+coll3 = NodePath("distory/distory2/CollisionShape2D")
+coll4 = NodePath("distory/distory3/CollisionShape2D")
+collisionShape = NodePath("CollisionShape2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1545087104]
+sprite_frames = SubResource("SpriteFrames_efqol")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=117913323]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_iminy")
+
+[node name="distory" type="Node2D" parent="." unique_id=442363091]
+visible = false
+
+[node name="distory" type="RigidBody2D" parent="distory" unique_id=2118233447]
+position = Vector2(-4, -5)
+physics_material_override = SubResource("PhysicsMaterial_i5rp1")
+freeze = true
+
+[node name="Sprite2D" type="Sprite2D" parent="distory/distory" unique_id=760036540]
+texture = ExtResource("7_aae64")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="distory/distory" unique_id=655520765]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_smbjh")
+
+[node name="distory4" type="RigidBody2D" parent="distory" unique_id=314236720]
+position = Vector2(-6, 4)
+physics_material_override = SubResource("PhysicsMaterial_ru7pn")
+freeze = true
+
+[node name="Sprite2D" type="Sprite2D" parent="distory/distory4" unique_id=1755771650]
+texture = ExtResource("4_w0fob")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="distory/distory4" unique_id=611011812]
+position = Vector2(0, 0.375)
+shape = SubResource("RectangleShape2D_wulfc")
+
+[node name="distory2" type="RigidBody2D" parent="distory" unique_id=1384083691]
+position = Vector2(7, 4)
+physics_material_override = SubResource("PhysicsMaterial_anhvy")
+freeze = true
+
+[node name="Sprite2D" type="Sprite2D" parent="distory/distory2" unique_id=131900949]
+texture = ExtResource("5_bhi1l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="distory/distory2" unique_id=1269149182]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_75oib")
+
+[node name="distory3" type="RigidBody2D" parent="distory" unique_id=796649207]
+position = Vector2(8, -5)
+physics_material_override = SubResource("PhysicsMaterial_bi7xf")
+freeze = true
+
+[node name="Sprite2D" type="Sprite2D" parent="distory/distory3" unique_id=1568637289]
+texture = ExtResource("6_e7s0c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="distory/distory3" unique_id=589589766]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_6xogm")
+
+[node name="hurt_box" type="Area2D" parent="." unique_id=871025680]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurt_box" unique_id=537668289]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_vogsj")
+metadata/_edit_lock_ = true
+
+[connection signal="area_entered" from="hurt_box" to="." method="_on_hurt_box_area_entered"]
+[connection signal="area_exited" from="hurt_box" to="." method="_on_hurt_box_area_exited"]

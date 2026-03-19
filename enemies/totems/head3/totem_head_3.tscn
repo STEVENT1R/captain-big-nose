@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://cpw8u8gmpcu46"]
+
+[ext_resource type="Script" uid="uid://buyj5mtey08mj" path="res://enemies/totems/head3/totem_head_3.gd" id="1_bd2qq"]
+[ext_resource type="Texture2D" uid="uid://dmg1cfdxkbeqq" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Totems/Head 3/Attack 1/1.png" id="1_yjpcu"]
+[ext_resource type="Texture2D" uid="uid://cn0m3gnk77sfq" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Totems/Head 3/Attack 1/2.png" id="2_bd2qq"]
+[ext_resource type="Texture2D" uid="uid://dp6n1vovj0lw0" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Totems/Head 3/Attack 1/3.png" id="3_wqfgy"]
+[ext_resource type="Texture2D" uid="uid://b0wqdhlvue6s2" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Totems/Head 3/Attack 1/4.png" id="4_2sfq7"]
+[ext_resource type="Texture2D" uid="uid://b7wiemgrfuqu7" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Totems/Head 3/Attack 1/5.png" id="5_obp50"]
+[ext_resource type="Texture2D" uid="uid://b7vaojirhs2fy" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Totems/Head 3/Attack 1/6.png" id="6_5oawd"]
+[ext_resource type="Texture2D" uid="uid://kxnpt7psjpho" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Totems/Head 3/Hit 1/1.png" id="7_m8rk5"]
+[ext_resource type="Texture2D" uid="uid://cl82muf8h8u3" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Totems/Head 3/Hit 1/2.png" id="8_04dk5"]
+[ext_resource type="Texture2D" uid="uid://bujmyaj48r3h5" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Totems/Head 3/Hit 1/3.png" id="9_8vam6"]
+[ext_resource type="Texture2D" uid="uid://vytorwu7w4ei" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Totems/Head 3/Hit 1/4.png" id="10_l5hqd"]
+[ext_resource type="Texture2D" uid="uid://ccpmnnr3ip1ny" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Totems/Head 3/Idle 1/1.png" id="11_3ndb0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pg6sf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_yjpcu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_bd2qq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_wqfgy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2sfq7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_obp50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5oawd")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_m8rk5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_04dk5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_8vam6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_l5hqd")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_3ndb0")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="SeparationRayShape2D" id="SeparationRayShape2D_o7iw7"]
+length = 150.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dp1rc"]
+size = Vector2(20, 22)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wfh50"]
+size = Vector2(21, 23)
+
+[node name="totem_head3" type="CharacterBody2D" unique_id=1771841960]
+script = ExtResource("1_bd2qq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=651064532]
+sprite_frames = SubResource("SpriteFrames_pg6sf")
+animation = &"attack"
+
+[node name="shoot_area" type="Area2D" parent="AnimatedSprite2D" unique_id=1026068422]
+position = Vector2(-12, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/shoot_area" unique_id=976250792]
+rotation = 1.5707964
+shape = SubResource("SeparationRayShape2D_o7iw7")
+
+[node name="bullet_pos" type="Marker2D" parent="AnimatedSprite2D" unique_id=351138455]
+position = Vector2(-17, 10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1254447400]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_dp1rc")
+
+[node name="hurt_box" type="Area2D" parent="." unique_id=914729426]
+position = Vector2(4, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurt_box" unique_id=2119138051]
+position = Vector2(-4, 4)
+shape = SubResource("RectangleShape2D_wfh50")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="AnimatedSprite2D/shoot_area" to="." method="_on_shoot_area_body_entered"]
+[connection signal="area_entered" from="hurt_box" to="." method="_on_hurt_box_area_entered"]

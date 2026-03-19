@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://1hbd08mlolh7"]
+
+[ext_resource type="Texture2D" uid="uid://biilow80ig0s3" path="res://assets/Treasure Hunters/Palm Tree Island/Sprites/Background/Small Cloud 1.png" id="1_21wo4"]
+[ext_resource type="Script" uid="uid://cc5u0nxgnsdth" path="res://objects/cloud/cloud.gd" id="1_3331v"]
+[ext_resource type="Texture2D" uid="uid://b6phi7seytkxp" path="res://assets/Treasure Hunters/Palm Tree Island/Sprites/Background/Small Cloud 2.png" id="2_3331v"]
+[ext_resource type="Texture2D" uid="uid://53kgwcwaygse" path="res://assets/Treasure Hunters/Palm Tree Island/Sprites/Background/Small Cloud 3.png" id="3_wkhn8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vjbvy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_21wo4")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3331v")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_wkhn8")
+}],
+"loop": true,
+"name": &"3",
+"speed": 5.0
+}]
+
+[node name="cloud" type="Node2D" unique_id=1873672434]
+z_index = 4
+z_as_relative = false
+script = ExtResource("1_3331v")
+speed = 35.0
+
+[node name="cloud" type="AnimatedSprite2D" parent="." unique_id=1060337800]
+sprite_frames = SubResource("SpriteFrames_vjbvy")
+animation = &"3"

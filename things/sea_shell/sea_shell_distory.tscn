@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://dusbx42lh81ev"]
+
+[ext_resource type="Script" uid="uid://cp1yi6yves1sw" path="res://things/sea_shell/sea_shell_distory.gd" id="1_5pd1n"]
+[ext_resource type="Texture2D" uid="uid://duerolg8l2su1" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Seashell/Seashell Destroyed/2.png" id="2_vm17k"]
+[ext_resource type="Texture2D" uid="uid://dbl02u761ld54" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Seashell/Seashell Destroyed/3.png" id="3_kucf6"]
+[ext_resource type="Texture2D" uid="uid://bv1x3k6ocpbvs" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Seashell/Seashell Destroyed/5.png" id="4_mxpvt"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_a1r8x"]
+friction = 3.1
+rough = true
+bounce = 1.83
+absorbent = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_puu8v"]
+size = Vector2(20, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dsu7n"]
+size = Vector2(20, 12)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e7sdv"]
+size = Vector2(20, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2tlrp"]
+size = Vector2(18, 9)
+
+[node name="sea_shell_distory" type="Node2D" unique_id=1237861599 node_paths=PackedStringArray("distory_pices", "distory_pices1", "distory_pices2", "distory_pices3", "distory_pices4", "coll", "coll2", "coll3", "coll4")]
+script = ExtResource("1_5pd1n")
+distory_pices = NodePath(".")
+distory_pices1 = NodePath("1")
+distory_pices2 = NodePath("2")
+distory_pices3 = NodePath("3")
+distory_pices4 = NodePath("4")
+coll = NodePath("1/CollisionShape2D")
+coll2 = NodePath("2/CollisionShape2D")
+coll3 = NodePath("3/CollisionShape2D")
+coll4 = NodePath("4/CollisionShape2D")
+
+[node name="1" type="RigidBody2D" parent="." unique_id=419497859]
+position = Vector2(-8, -9)
+physics_material_override = SubResource("PhysicsMaterial_a1r8x")
+
+[node name="Sprite2D" type="Sprite2D" parent="1" unique_id=1168347628]
+texture = ExtResource("2_vm17k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="1" unique_id=33299083]
+shape = SubResource("RectangleShape2D_puu8v")
+disabled = true
+
+[node name="2" type="RigidBody2D" parent="." unique_id=1635259637]
+position = Vector2(6, -10)
+physics_material_override = SubResource("PhysicsMaterial_a1r8x")
+
+[node name="Sprite2D" type="Sprite2D" parent="2" unique_id=480195243]
+texture = ExtResource("3_kucf6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="2" unique_id=626351885]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_dsu7n")
+disabled = true
+
+[node name="3" type="RigidBody2D" parent="." unique_id=615483664]
+position = Vector2(-8, -1)
+physics_material_override = SubResource("PhysicsMaterial_a1r8x")
+
+[node name="Sprite2D" type="Sprite2D" parent="3" unique_id=545861977]
+texture = ExtResource("4_mxpvt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="3" unique_id=1642968131]
+position = Vector2(-1, 3)
+shape = SubResource("RectangleShape2D_e7sdv")
+disabled = true
+
+[node name="4" type="RigidBody2D" parent="." unique_id=748847685]
+position = Vector2(8, -1)
+physics_material_override = SubResource("PhysicsMaterial_a1r8x")
+
+[node name="Sprite2D" type="Sprite2D" parent="4" unique_id=1791034434]
+texture = ExtResource("4_mxpvt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="4" unique_id=332270116]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_2tlrp")
+disabled = true

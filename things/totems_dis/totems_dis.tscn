@@ -1,0 +1,200 @@
+[gd_scene format=3 uid="uid://cgx32t2lkqx0a"]
+
+[ext_resource type="Texture2D" uid="uid://qeh6167x4gpm" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Totems/Head 1/Destroyed/6.png" id="1_iej8g"]
+[ext_resource type="Script" uid="uid://f6heaktwn1j4" path="res://things/totems_dis/totems_dis.gd" id="1_jtfvh"]
+[ext_resource type="Texture2D" uid="uid://ceswdljeuvw1e" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Totems/Head 1/Destroyed/5.png" id="2_87bgp"]
+[ext_resource type="Texture2D" uid="uid://c0qtugfa43vfs" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Totems/Head 1/Destroyed/3.png" id="4_tdy2g"]
+[ext_resource type="Texture2D" uid="uid://cs3f7rs11vuvt" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Totems/Head 2/Destroyed/6.png" id="5_u2utg"]
+[ext_resource type="Texture2D" uid="uid://b747dx2a6536q" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Totems/Head 2/Destroyed/5.png" id="6_26ajs"]
+[ext_resource type="Texture2D" uid="uid://dokheeof1uor6" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Totems/Head 3/Destroyed/6.png" id="7_w6mom"]
+[ext_resource type="Texture2D" uid="uid://tr682rsnx7dw" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Totems/Head 3/Destroyed/5.png" id="8_4ewyk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6infu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_iej8g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3bpmm"]
+radius = 7.7643175
+height = 35.772785
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y4cu0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_87bgp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kff0m"]
+radius = 7.7643175
+height = 35.772785
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_dmjri"]
+bounce = 4.3
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7r72v"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3eq3h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_u2utg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bdg2i"]
+radius = 7.7643175
+height = 22.37
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ywlvb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_26ajs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fro18"]
+radius = 7.7643175
+height = 25.67
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n8g4f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_w6mom")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yaq1u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_4ewyk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="totems_dis" type="RigidBody2D" unique_id=1290580419]
+gravity_scale = 0.0
+script = ExtResource("1_jtfvh")
+
+[node name="top" type="Node2D" parent="." unique_id=570748295]
+position = Vector2(0, -35)
+
+[node name="right" type="RigidBody2D" parent="top" unique_id=1106612603]
+freeze = true
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="top/right" unique_id=1519203468]
+position = Vector2(13, -2)
+sprite_frames = SubResource("SpriteFrames_6infu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="top/right" unique_id=929617793]
+position = Vector2(17, -2)
+rotation = -1.6406095
+shape = SubResource("CapsuleShape2D_3bpmm")
+disabled = true
+
+[node name="left" type="RigidBody2D" parent="top" unique_id=400631837]
+freeze = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="top/left" unique_id=314919596]
+position = Vector2(-14, -2)
+sprite_frames = SubResource("SpriteFrames_y4cu0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="top/left" unique_id=1026456657]
+position = Vector2(-14.999999, -2.0000002)
+rotation = 1.6406095
+shape = SubResource("CapsuleShape2D_kff0m")
+disabled = true
+
+[node name="RigidBody2D" type="RigidBody2D" parent="top" unique_id=1987824982]
+position = Vector2(0, -19)
+physics_material_override = SubResource("PhysicsMaterial_dmjri")
+
+[node name="Sprite2D" type="Sprite2D" parent="top/RigidBody2D" unique_id=1676294931]
+texture = ExtResource("4_tdy2g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="top/RigidBody2D" unique_id=1995493094]
+shape = SubResource("CircleShape2D_7r72v")
+
+[node name="center" type="Node2D" parent="." unique_id=313568156]
+position = Vector2(0, -18)
+
+[node name="right" type="RigidBody2D" parent="center" unique_id=929159290]
+freeze = true
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="center/right" unique_id=365753846]
+position = Vector2(4, -1)
+sprite_frames = SubResource("SpriteFrames_3eq3h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="center/right" unique_id=726502112]
+position = Vector2(6, -1.0000001)
+rotation = -1.6406095
+shape = SubResource("CapsuleShape2D_bdg2i")
+disabled = true
+
+[node name="left" type="RigidBody2D" parent="center" unique_id=1248285994]
+freeze = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="center/left" unique_id=1308861543]
+position = Vector2(-18, 0)
+sprite_frames = SubResource("SpriteFrames_ywlvb")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="center/left" unique_id=806428526]
+position = Vector2(-16.999998, -3.5762787e-07)
+rotation = 1.6406095
+shape = SubResource("CapsuleShape2D_fro18")
+disabled = true
+
+[node name="down" type="Node2D" parent="." unique_id=1727807104]
+position = Vector2(0, -18)
+
+[node name="right" type="RigidBody2D" parent="down" unique_id=1411248818]
+position = Vector2(1, 16)
+freeze = true
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="down/right" unique_id=311562979]
+position = Vector2(4, -1)
+sprite_frames = SubResource("SpriteFrames_n8g4f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="down/right" unique_id=759883168]
+position = Vector2(6, -1.0000001)
+rotation = -1.6406095
+shape = SubResource("CapsuleShape2D_bdg2i")
+disabled = true
+
+[node name="left" type="RigidBody2D" parent="down" unique_id=2142055936]
+position = Vector2(5, 17)
+freeze = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="down/left" unique_id=1009177931]
+position = Vector2(-18, 0)
+sprite_frames = SubResource("SpriteFrames_yaq1u")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="down/left" unique_id=532799773]
+position = Vector2(-16.999998, -3.5762787e-07)
+rotation = 1.6406095
+shape = SubResource("CapsuleShape2D_fro18")
+disabled = true

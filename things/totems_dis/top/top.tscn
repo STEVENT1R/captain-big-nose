@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://cp70jqahtnx5x"]
+
+[ext_resource type="Texture2D" uid="uid://qeh6167x4gpm" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Totems/Head 1/Destroyed/6.png" id="1_ikx3b"]
+[ext_resource type="Script" uid="uid://27glcqnvmhru" path="res://things/totems_dis/top/top.gd" id="1_ybhho"]
+[ext_resource type="Texture2D" uid="uid://ceswdljeuvw1e" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Totems/Head 1/Destroyed/5.png" id="2_ybhho"]
+[ext_resource type="Texture2D" uid="uid://c0qtugfa43vfs" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Totems/Head 1/Destroyed/3.png" id="3_j60vj"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ybhho"]
+rough = true
+bounce = 0.88
+absorbent = true
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6infu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ikx3b")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3bpmm"]
+radius = 7.7643175
+height = 35.772785
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_j60vj"]
+rough = true
+bounce = 2.8
+absorbent = true
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y4cu0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ybhho")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kff0m"]
+radius = 7.7643175
+height = 35.772785
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_dmjri"]
+friction = 6.08
+rough = true
+bounce = 9.28
+absorbent = true
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7r72v"]
+
+[node name="top" type="Node2D" unique_id=1869627819 node_paths=PackedStringArray("distory_pices", "distory_pices1", "distory_pices2", "distory_pices3", "coll", "coll2", "coll3")]
+script = ExtResource("1_ybhho")
+distory_pices = NodePath(".")
+distory_pices1 = NodePath("right")
+distory_pices2 = NodePath("left")
+distory_pices3 = NodePath("RigidBody2D")
+coll = NodePath("right/CollisionShape2D")
+coll2 = NodePath("left/CollisionShape2D2")
+coll3 = NodePath("RigidBody2D/CollisionShape2D")
+
+[node name="right" type="RigidBody2D" parent="." unique_id=1424077488]
+physics_material_override = SubResource("PhysicsMaterial_ybhho")
+freeze = true
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="right" unique_id=256274692]
+position = Vector2(13, -2)
+sprite_frames = SubResource("SpriteFrames_6infu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="right" unique_id=1075931385]
+position = Vector2(17, -2)
+rotation = -1.6406095
+shape = SubResource("CapsuleShape2D_3bpmm")
+disabled = true
+
+[node name="left" type="RigidBody2D" parent="." unique_id=1548369659]
+physics_material_override = SubResource("PhysicsMaterial_j60vj")
+freeze = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="left" unique_id=615435026]
+position = Vector2(-14, -2)
+sprite_frames = SubResource("SpriteFrames_y4cu0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="left" unique_id=142431817]
+position = Vector2(-14.999999, -2.0000002)
+rotation = 1.6406095
+shape = SubResource("CapsuleShape2D_kff0m")
+disabled = true
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=691846448]
+position = Vector2(0, -19)
+physics_material_override = SubResource("PhysicsMaterial_dmjri")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" unique_id=1688921056]
+texture = ExtResource("3_j60vj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=2023768671]
+shape = SubResource("CircleShape2D_7r72v")
+disabled = true

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://c66s4ngavw4f8"]
+
+[ext_resource type="Script" uid="uid://dpouy1j18vpm2" path="res://resources/cloud_spawner/cloud_spawner.gd" id="1_0q7o2"]
+[ext_resource type="PackedScene" uid="uid://1hbd08mlolh7" path="res://objects/cloud/cloud.tscn" id="2_vfiu6"]
+
+[node name="CloudSpawner" type="Node2D" unique_id=1942770919]
+script = ExtResource("1_0q7o2")
+cloud_scene = ExtResource("2_vfiu6")
+cloud_count = 35

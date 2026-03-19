@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://b50wkgp81od3s"]
+
+[ext_resource type="PackedScene" uid="uid://bilkjwsjdemo0" path="res://captain/captain.tscn" id="2_8a8pi"]
+[ext_resource type="PackedScene" uid="uid://b8xsxl5ssiqvd" path="res://enemies/caanon/cannon.tscn" id="3_65205"]
+[ext_resource type="PackedScene" uid="uid://pxig834khk67" path="res://objects/coin/coin.tscn" id="4_hrq6i"]
+[ext_resource type="PackedScene" uid="uid://w2liaxp3sqdu" path="res://objects/map_piece/map_piece.tscn" id="5_tbfq4"]
+[ext_resource type="PackedScene" uid="uid://cpw8u8gmpcu46" path="res://enemies/totems/head3/totem_head_3.tscn" id="7_kgdm3"]
+[ext_resource type="PackedScene" uid="uid://dbh0x7ubxixc" path="res://things/box/box.tscn" id="8_aeque"]
+
+[node name="test" type="Node2D" unique_id=1585361469]
+
+[node name="captain" parent="." unique_id=1679501873 groups=["captain"] instance=ExtResource("2_8a8pi")]
+position = Vector2(325, 537)
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=215648880]
+
+[node name="cannon" parent="." unique_id=290514012 instance=ExtResource("3_65205")]
+position = Vector2(466, 522)
+
+[node name="coin" parent="." unique_id=1810588476 instance=ExtResource("4_hrq6i")]
+position = Vector2(143, 549)
+
+[node name="coin2" parent="." unique_id=75188626 instance=ExtResource("4_hrq6i")]
+position = Vector2(191, 549)
+
+[node name="coin3" parent="." unique_id=1085027266 instance=ExtResource("4_hrq6i")]
+position = Vector2(226, 549)
+
+[node name="coin4" parent="." unique_id=1159846355 instance=ExtResource("4_hrq6i")]
+position = Vector2(265, 549)
+
+[node name="coin5" parent="." unique_id=1549952956 instance=ExtResource("4_hrq6i")]
+position = Vector2(167, 549)
+
+[node name="map_piece" parent="." unique_id=1076024004 instance=ExtResource("5_tbfq4")]
+position = Vector2(658, 498)
+
+[node name="map_piece2" parent="." unique_id=1763164794 instance=ExtResource("5_tbfq4")]
+position = Vector2(693, 497)
+
+[node name="map_piece3" parent="." unique_id=652344353 instance=ExtResource("5_tbfq4")]
+position = Vector2(843, 495)
+
+[node name="map_piece4" parent="." unique_id=2036620916 instance=ExtResource("5_tbfq4")]
+position = Vector2(883, 496)
+
+[node name="map_piece5" parent="." unique_id=1958121797 instance=ExtResource("5_tbfq4")]
+position = Vector2(928, 497)
+
+[node name="map_piece6" parent="." unique_id=1317540949 instance=ExtResource("5_tbfq4")]
+position = Vector2(1053, 493)
+
+[node name="map_piece7" parent="." unique_id=205243369 instance=ExtResource("5_tbfq4")]
+position = Vector2(1103, 493)
+
+[node name="map_piece8" parent="." unique_id=591346685 instance=ExtResource("5_tbfq4")]
+position = Vector2(1138, 494)
+
+[node name="totem_head3" parent="." unique_id=1771841960 instance=ExtResource("7_kgdm3")]
+position = Vector2(521, 447)
+
+[node name="box" parent="." unique_id=1101288323 instance=ExtResource("8_aeque")]
+position = Vector2(416, 491)

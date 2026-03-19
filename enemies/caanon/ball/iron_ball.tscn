@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cmyu5a8b3vu3q"]
+
+[ext_resource type="Texture2D" uid="uid://cmcgw6k746rtb" path="res://assets/cannon/10-Cannon/Cannon Ball.png" id="1_c77bx"]
+[ext_resource type="Script" uid="uid://bokbswwxhar76" path="res://enemies/caanon/ball/iron_ball.gd" id="1_e4f4c"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_e4f4c"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vtner"]
+radius = 6.3245554
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i62s3"]
+radius = 7.0
+
+[node name="iron_ball" type="RigidBody2D" unique_id=125837497]
+physics_material_override = SubResource("PhysicsMaterial_e4f4c")
+gravity_scale = 0.0
+script = ExtResource("1_e4f4c")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1111320944]
+position = Vector2(-7, -5)
+texture = ExtResource("1_c77bx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=621194662]
+shape = SubResource("CircleShape2D_vtner")
+disabled = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1957281600 groups=["enemy_attack_area"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2015233558]
+shape = SubResource("CircleShape2D_i62s3")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

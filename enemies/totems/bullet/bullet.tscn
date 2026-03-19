@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://cw572iykjk67r"]
+
+[ext_resource type="Texture2D" uid="uid://cjjqljgc56i53" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Totems/Wood Spike/Destroyed/1.png" id="1_gnn32"]
+[ext_resource type="Script" uid="uid://cu2f65os51f3o" path="res://enemies/totems/bullet/bullet.gd" id="1_n46dj"]
+[ext_resource type="Texture2D" uid="uid://cix5w5meebv27" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Totems/Wood Spike/Destroyed/2.png" id="2_n46dj"]
+[ext_resource type="Texture2D" uid="uid://d0dk37xacblsn" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Totems/Wood Spike/Destroyed/3.png" id="3_hbcdg"]
+[ext_resource type="Texture2D" uid="uid://cq721vrdgwgr7" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Totems/Wood Spike/Idle/1.png" id="4_bn1ix"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o4ya5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_gnn32")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_n46dj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hbcdg")
+}],
+"loop": false,
+"name": &"destroyed",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_bn1ix")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xm4v8"]
+radius = 2.0
+height = 10.0
+
+[node name="bullet" type="Area2D" unique_id=1432029062 groups=["enemy_attack_area"]]
+script = ExtResource("1_n46dj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=66107035]
+sprite_frames = SubResource("SpriteFrames_o4ya5")
+animation = &"idle"
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=214604939]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_xm4v8")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

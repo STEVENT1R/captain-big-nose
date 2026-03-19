@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://c8ojob7ib5syr"]
+
+[ext_resource type="Texture2D" uid="uid://cs3f7rs11vuvt" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Totems/Head 2/Destroyed/6.png" id="1_p3t32"]
+[ext_resource type="Script" uid="uid://bxrfog5v5l7h6" path="res://things/totems_dis/center/center.gd" id="1_yjcvw"]
+[ext_resource type="Texture2D" uid="uid://b747dx2a6536q" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Totems/Head 2/Destroyed/5.png" id="2_yjcvw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3eq3h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_p3t32")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bdg2i"]
+radius = 7.7643175
+height = 22.37
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ywlvb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_yjcvw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fro18"]
+radius = 7.7643175
+height = 25.67
+
+[node name="center" type="Node2D" unique_id=1394951029 node_paths=PackedStringArray("distory_pices", "distory_pices1", "distory_pices2", "coll", "coll2")]
+script = ExtResource("1_yjcvw")
+distory_pices = NodePath(".")
+distory_pices1 = NodePath("right")
+distory_pices2 = NodePath("left")
+coll = NodePath("right/CollisionShape2D")
+coll2 = NodePath("left/CollisionShape2D2")
+
+[node name="right" type="RigidBody2D" parent="." unique_id=507832158]
+freeze = true
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="right" unique_id=1616985767]
+position = Vector2(4, -1)
+sprite_frames = SubResource("SpriteFrames_3eq3h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="right" unique_id=115804292]
+position = Vector2(6, -1.0000001)
+rotation = -1.6406095
+shape = SubResource("CapsuleShape2D_bdg2i")
+disabled = true
+
+[node name="left" type="RigidBody2D" parent="." unique_id=590765609]
+freeze = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="left" unique_id=680293831]
+position = Vector2(-18, 0)
+sprite_frames = SubResource("SpriteFrames_ywlvb")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="left" unique_id=271843481]
+position = Vector2(-16.999998, -3.5762787e-07)
+rotation = 1.6406095
+shape = SubResource("CapsuleShape2D_fro18")
+disabled = true

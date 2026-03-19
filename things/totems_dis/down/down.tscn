@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://bbrre7vqhn063"]
+
+[ext_resource type="Texture2D" uid="uid://dokheeof1uor6" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Totems/Head 3/Destroyed/6.png" id="1_7nymu"]
+[ext_resource type="Script" uid="uid://cwwd3lv72bgc5" path="res://things/totems_dis/down/down.gd" id="1_kxybo"]
+[ext_resource type="Texture2D" uid="uid://tr682rsnx7dw" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Totems/Head 3/Destroyed/5.png" id="2_kxybo"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n8g4f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7nymu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bdg2i"]
+radius = 7.7643175
+height = 22.37
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yaq1u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_kxybo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fro18"]
+radius = 7.7643175
+height = 25.67
+
+[node name="down" type="Node2D" unique_id=1910042535 node_paths=PackedStringArray("distory_pices", "distory_pices1", "distory_pices2", "coll", "coll2")]
+script = ExtResource("1_kxybo")
+distory_pices = NodePath(".")
+distory_pices1 = NodePath("right")
+distory_pices2 = NodePath("left")
+coll = NodePath("right/CollisionShape2D")
+coll2 = NodePath("left/CollisionShape2D2")
+
+[node name="right" type="RigidBody2D" parent="." unique_id=34359037]
+position = Vector2(1, 16)
+freeze = true
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="right" unique_id=1012614607]
+position = Vector2(4, -1)
+sprite_frames = SubResource("SpriteFrames_n8g4f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="right" unique_id=1741777828]
+position = Vector2(6, -1.0000001)
+rotation = -1.6406095
+shape = SubResource("CapsuleShape2D_bdg2i")
+disabled = true
+
+[node name="left" type="RigidBody2D" parent="." unique_id=397767706]
+position = Vector2(5, 17)
+freeze = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="left" unique_id=77667571]
+position = Vector2(-18, 0)
+sprite_frames = SubResource("SpriteFrames_yaq1u")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="left" unique_id=1694124794]
+position = Vector2(-16.999998, -3.5762787e-07)
+rotation = 1.6406095
+shape = SubResource("CapsuleShape2D_fro18")
+disabled = true

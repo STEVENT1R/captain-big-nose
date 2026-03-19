@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://cdlf4ugwxvf0s"]
+
+[ext_resource type="Texture2D" uid="uid://b4d0jclqktmyq" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Seashell/Pearl Idle/1.png" id="1_do824"]
+[ext_resource type="Script" uid="uid://webeco1mlwj2" path="res://enemies/seashell/bullet/bullet.gd" id="1_qhlj6"]
+[ext_resource type="Texture2D" uid="uid://di0h6wtwqroms" path="res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Dust Particles/Jump 02.png" id="3_i0dpx"]
+[ext_resource type="Texture2D" uid="uid://djokb8agh3fng" path="res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Dust Particles/Jump 03.png" id="4_sh45f"]
+[ext_resource type="Texture2D" uid="uid://dwi08ujksl2tu" path="res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Dust Particles/Jump 04.png" id="5_tkli1"]
+[ext_resource type="Texture2D" uid="uid://c61dkigr6ll3t" path="res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Dust Particles/Jump 05.png" id="6_0r27v"]
+[ext_resource type="Texture2D" uid="uid://cs7vk0g2ayclx" path="res://assets/Treasure Hunters/Captain Clown Nose/Sprites/Dust Particles/Jump 06.png" id="7_y8qwy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qhlj6"]
+radius = 3.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tpqrf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_i0dpx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_sh45f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tkli1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_0r27v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_y8qwy")
+}],
+"loop": true,
+"name": &"dis",
+"speed": 10.0
+}]
+
+[node name="bullet" type="Area2D" unique_id=2106206523 groups=["enemy_attack_area"]]
+script = ExtResource("1_qhlj6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=546532990]
+position = Vector2(-0.455, 0.385)
+texture = ExtResource("1_do824")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=540874866]
+shape = SubResource("CircleShape2D_qhlj6")
+
+[node name="Timer" type="Timer" parent="." unique_id=1068741356]
+wait_time = 5.0
+autostart = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=581640997]
+visible = false
+sprite_frames = SubResource("SpriteFrames_tpqrf")
+animation = &"dis"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

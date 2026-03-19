@@ -1,0 +1,200 @@
+[gd_scene format=3 uid="uid://bq0kmgv6a4ubf"]
+
+[ext_resource type="Script" uid="uid://d1607bahnb435" path="res://enemies/seashell/seashell.gd" id="1_vv82m"]
+[ext_resource type="PackedScene" uid="uid://cdlf4ugwxvf0s" path="res://enemies/seashell/bullet/bullet.tscn" id="2_6lj0c"]
+[ext_resource type="Texture2D" uid="uid://b76j73rlkqe1" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Seashell/Seashell Destroyed/1.png" id="2_8om72"]
+[ext_resource type="Texture2D" uid="uid://duerolg8l2su1" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Seashell/Seashell Destroyed/2.png" id="3_6lj0c"]
+[ext_resource type="PackedScene" uid="uid://djajje0nd0jpx" path="res://enemies/seashell/distory.tscn" id="3_hw2v3"]
+[ext_resource type="Texture2D" uid="uid://bae1yycw7i1vs" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Seashell/Seashell Bite/1.png" id="3_pvd72"]
+[ext_resource type="Texture2D" uid="uid://dekjrp6lx8gcs" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Seashell/Seashell Bite/2.png" id="4_731dv"]
+[ext_resource type="Texture2D" uid="uid://dbl02u761ld54" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Seashell/Seashell Destroyed/3.png" id="4_tsfwa"]
+[ext_resource type="Texture2D" uid="uid://kf65yr7030mh" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Seashell/Seashell Bite/3.png" id="5_hw2v3"]
+[ext_resource type="Texture2D" uid="uid://5lbghu7qq50f" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Seashell/Seashell Destroyed/4.png" id="5_vg467"]
+[ext_resource type="Texture2D" uid="uid://bv1x3k6ocpbvs" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Seashell/Seashell Destroyed/5.png" id="6_8nkyi"]
+[ext_resource type="Texture2D" uid="uid://jhdiopvdthdp" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Seashell/Seashell Bite/4.png" id="6_mktpt"]
+[ext_resource type="Texture2D" uid="uid://b51gxktcbrby6" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Seashell/Seashell Idle/1.png" id="7_d6150"]
+[ext_resource type="Texture2D" uid="uid://bc67dc2c30q5u" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Seashell/Seashell Bite/5.png" id="7_khqke"]
+[ext_resource type="Texture2D" uid="uid://bfgyewp38y2dk" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Seashell/Seashell Fire/1.png" id="8_pvd72"]
+[ext_resource type="Texture2D" uid="uid://digww37ue0dx8" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Seashell/Seashell Bite/6.png" id="8_x7cd0"]
+[ext_resource type="Texture2D" uid="uid://c4gbwark3g0b0" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Seashell/Seashell Fire/2.png" id="9_731dv"]
+[ext_resource type="Texture2D" uid="uid://by5up21muf5po" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Seashell/Seashell Fire/3.png" id="10_hw2v3"]
+[ext_resource type="Texture2D" uid="uid://cdlsvmk00h268" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Seashell/Seashell Fire/4.png" id="11_mktpt"]
+[ext_resource type="Texture2D" uid="uid://cm1xby2fp5wph" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Seashell/Seashell Fire/5.png" id="12_khqke"]
+[ext_resource type="Texture2D" uid="uid://26ur4se2w38e" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Seashell/Seashell Fire/6.png" id="13_x7cd0"]
+[ext_resource type="Texture2D" uid="uid://bjrm8mvohvagx" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Seashell/Seashell Hit/1.png" id="14_731dv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j44xf"]
+atlas = ExtResource("7_d6150")
+region = Rect2(0, 0, 40, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_low20"]
+atlas = ExtResource("8_pvd72")
+region = Rect2(0, 0, 40, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b3d8p"]
+atlas = ExtResource("10_hw2v3")
+region = Rect2(0, 0, 40, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0510w"]
+atlas = ExtResource("11_mktpt")
+region = Rect2(0, 0, 40, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjf10"]
+atlas = ExtResource("12_khqke")
+region = Rect2(0, 0, 40, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5w4if"]
+atlas = ExtResource("13_x7cd0")
+region = Rect2(0, 0, 40, 38)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_coj6b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_pvd72")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_731dv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_hw2v3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mktpt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_khqke")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_x7cd0")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8om72")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6lj0c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_tsfwa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_vg467")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_8nkyi")
+}],
+"loop": false,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_731dv")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j44xf")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_low20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_731dv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b3d8p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0510w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vjf10")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5w4if")
+}],
+"loop": false,
+"name": &"shot",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_27o6b"]
+radius = 8.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pvd72"]
+size = Vector2(30, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_731dv"]
+size = Vector2(28, 27)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hw2v3"]
+radius = 8.0
+
+[node name="seashell" type="CharacterBody2D" unique_id=1969361498 node_paths=PackedStringArray("see_player", "ray_shot")]
+script = ExtResource("1_vv82m")
+b = ExtResource("2_6lj0c")
+see_player = NodePath("areas/attack_player/CollisionShape2D")
+ray_shot = NodePath("shot")
+
+[node name="distory" parent="." unique_id=1125839217 instance=ExtResource("3_hw2v3")]
+position = Vector2(-4.925, -9.08)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1013327651]
+position = Vector2(-6, -12)
+sprite_frames = SubResource("SpriteFrames_coj6b")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=603416434]
+position = Vector2(-1, -4)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_27o6b")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=506620139]
+position = Vector2(-24, -2)
+
+[node name="areas" type="Marker2D" parent="." unique_id=412886205]
+
+[node name="see_player" type="Area2D" parent="areas" unique_id=1426929638]
+position = Vector2(-23.3, -1.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="areas/see_player" unique_id=931378086]
+position = Vector2(16.3, -11.5)
+shape = SubResource("RectangleShape2D_pvd72")
+
+[node name="attack_player" type="Area2D" parent="areas" unique_id=1929503070 groups=["enemy_attack_area"]]
+position = Vector2(-23.3, -1.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="areas/attack_player" unique_id=345995039]
+position = Vector2(16.3, -9)
+shape = SubResource("RectangleShape2D_731dv")
+disabled = true
+
+[node name="shot" type="RayCast2D" parent="." unique_id=187371709]
+position = Vector2(-40, 0)
+target_position = Vector2(-352, 0)
+
+[node name="hurt_box" type="Area2D" parent="." unique_id=1352220878]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="hurt_box" unique_id=26479103]
+position = Vector2(-1, -4)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_hw2v3")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="areas/see_player" to="." method="_on_see_player_body_entered"]
+[connection signal="area_entered" from="hurt_box" to="." method="_on_hurt_box_area_entered"]

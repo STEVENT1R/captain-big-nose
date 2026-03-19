@@ -1,0 +1,203 @@
+[gd_scene format=3 uid="uid://b8xsxl5ssiqvd"]
+
+[ext_resource type="Texture2D" uid="uid://d2fmbd5yp4ydc" path="res://assets/cannon/10-Cannon/Shoot (44x28).png" id="1_26chj"]
+[ext_resource type="Script" uid="uid://mn8y6simduae" path="res://enemies/caanon/cannon.gd" id="1_gop6w"]
+[ext_resource type="PackedScene" uid="uid://cmyu5a8b3vu3q" path="res://enemies/caanon/ball/iron_ball.tscn" id="2_0u6cy"]
+[ext_resource type="Texture2D" uid="uid://cm8pupca45prf" path="res://assets/cannon/10-Cannon/Idle.png" id="2_gop6w"]
+[ext_resource type="Texture2D" uid="uid://cei0rw3j8oxcj" path="res://assets/pig/07-Pig With a Match/Match On (26x18).png" id="3_0u6cy"]
+[ext_resource type="Texture2D" uid="uid://dog2uem2l1yki" path="res://assets/pig/07-Pig With a Match/Lighting the Match (26x18).png" id="4_k8604"]
+[ext_resource type="Texture2D" uid="uid://l343na55j5a7" path="res://assets/pig/03-Pig/Dead (34x28).png" id="5_k8604"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ldcpy"]
+atlas = ExtResource("1_26chj")
+region = Rect2(0, 0, 44, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n74b6"]
+atlas = ExtResource("1_26chj")
+region = Rect2(44, 0, 44, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6yq65"]
+atlas = ExtResource("1_26chj")
+region = Rect2(88, 0, 44, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5fanf"]
+atlas = ExtResource("1_26chj")
+region = Rect2(132, 0, 44, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4f77p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ldcpy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n74b6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6yq65")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5fanf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_gop6w")
+}],
+"loop": false,
+"name": &"fire",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_gop6w")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4f77p"]
+atlas = ExtResource("5_k8604")
+region = Rect2(0, 0, 34, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04aio"]
+atlas = ExtResource("5_k8604")
+region = Rect2(34, 0, 34, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8or5a"]
+atlas = ExtResource("5_k8604")
+region = Rect2(68, 0, 34, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wli04"]
+atlas = ExtResource("5_k8604")
+region = Rect2(102, 0, 34, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_asuvv"]
+atlas = ExtResource("3_0u6cy")
+region = Rect2(0, 0, 26, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d6x6n"]
+atlas = ExtResource("3_0u6cy")
+region = Rect2(26, 0, 26, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bxahq"]
+atlas = ExtResource("3_0u6cy")
+region = Rect2(52, 0, 26, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1v531"]
+atlas = ExtResource("4_k8604")
+region = Rect2(0, 0, 26, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2b6h"]
+atlas = ExtResource("4_k8604")
+region = Rect2(26, 0, 26, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4vxt"]
+atlas = ExtResource("4_k8604")
+region = Rect2(52, 0, 26, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_04aio"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4f77p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_04aio")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8or5a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wli04")
+}],
+"loop": false,
+"name": &"die",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_asuvv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d6x6n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bxahq")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1v531")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2b6h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m4vxt")
+}],
+"loop": false,
+"name": &"shot",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8or5a"]
+size = Vector2(23, 18)
+
+[sub_resource type="SeparationRayShape2D" id="SeparationRayShape2D_lyl3n"]
+length = 200.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0u6cy"]
+size = Vector2(16.772, 15.1675)
+
+[node name="cannon" type="CharacterBody2D" unique_id=290514012 node_paths=PackedStringArray("marker")]
+script = ExtResource("1_gop6w")
+b = ExtResource("2_0u6cy")
+marker = NodePath("ray/Marker2D")
+
+[node name="cannon" type="AnimatedSprite2D" parent="." unique_id=1049244484]
+position = Vector2(7, -4)
+sprite_frames = SubResource("SpriteFrames_4f77p")
+animation = &"fire"
+frame = 4
+frame_progress = 1.0
+flip_h = true
+
+[node name="pig" type="AnimatedSprite2D" parent="." unique_id=433867755]
+position = Vector2(-21, -2)
+sprite_frames = SubResource("SpriteFrames_04aio")
+animation = &"die"
+autoplay = "idle"
+frame = 3
+frame_progress = 1.0
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1292610174]
+position = Vector2(-0.5, -2)
+shape = SubResource("RectangleShape2D_8or5a")
+
+[node name="ray" type="Node2D" parent="." unique_id=1183935404]
+
+[node name="see_player" type="Area2D" parent="ray" unique_id=52404339]
+position = Vector2(14, -4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ray/see_player" unique_id=149036729]
+rotation = -1.5707964
+shape = SubResource("SeparationRayShape2D_lyl3n")
+
+[node name="Marker2D" type="Marker2D" parent="ray" unique_id=1540359641]
+position = Vector2(14, -4)
+
+[node name="hurt_box" type="Area2D" parent="." unique_id=1699852446]
+position = Vector2(-23, -2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurt_box" unique_id=1270707060]
+position = Vector2(0, 1.41625)
+shape = SubResource("RectangleShape2D_0u6cy")
+
+[connection signal="animation_finished" from="pig" to="." method="_on_pig_animation_finished"]
+[connection signal="frame_changed" from="pig" to="." method="_on_pig_frame_changed"]
+[connection signal="body_entered" from="ray/see_player" to="." method="_on_see_player_body_entered"]
+[connection signal="area_entered" from="hurt_box" to="." method="_on_hurt_box_area_entered"]

@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://djajje0nd0jpx"]
+
+[ext_resource type="Script" uid="uid://cql3dhnm3i6c2" path="res://enemies/seashell/distory.gd" id="1_pu6kw"]
+[ext_resource type="Texture2D" uid="uid://bv1x3k6ocpbvs" path="res://assets/Treasure Hunters/Shooter Traps/Sprites/Seashell/Seashell Destroyed/5.png" id="1_wfodv"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_pu6kw"]
+friction = 7.0
+rough = true
+bounce = 12.7
+absorbent = true
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pu6kw"]
+radius = 5.958893
+
+[node name="distory" type="RigidBody2D" unique_id=1125839217]
+physics_material_override = SubResource("PhysicsMaterial_pu6kw")
+script = ExtResource("1_pu6kw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1216492421]
+position = Vector2(-1, -3)
+texture = ExtResource("1_wfodv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=628390687]
+rotation = -1.4922565
+scale = Vector2(0.6650001, 0.6650001)
+shape = SubResource("CapsuleShape2D_pu6kw")

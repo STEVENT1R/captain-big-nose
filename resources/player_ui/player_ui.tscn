@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://dy4qrg12hoggc"]
+
+[ext_resource type="Texture2D" uid="uid://bfgv1t0d01qxr" path="res://assets/Treasure Hunters/Wood and Paper UI/Sprites/Mobile Buttons/Mobile Buttons/4.png" id="1_dvmud"]
+[ext_resource type="Texture2D" uid="uid://ikgx3o6brbhy" path="res://assets/Treasure Hunters/Wood and Paper UI/Sprites/Mobile Buttons/Mobile Buttons/3.png" id="2_b4xfd"]
+[ext_resource type="Texture2D" uid="uid://bdxawdly48nw" path="res://assets/Treasure Hunters/Wood and Paper UI/Sprites/Mobile Buttons/Mobile Buttons/5.png" id="3_sndr4"]
+[ext_resource type="Texture2D" uid="uid://cbdc007qplk37" path="res://assets/Treasure Hunters/Wood and Paper UI/Sprites/Mobile Buttons/Mobile Buttons/6.png" id="4_dje7x"]
+[ext_resource type="Texture2D" uid="uid://ut4e0ebdrnd2" path="res://assets/Treasure Hunters/Wood and Paper UI/Sprites/Mobile Buttons/Mobile Buttons/7.png" id="5_dje7x"]
+[ext_resource type="Texture2D" uid="uid://bw8x3pl7h8eth" path="res://assets/Treasure Hunters/Wood and Paper UI/Sprites/Mobile Buttons/Mobile Buttons/8.png" id="6_gux5g"]
+[ext_resource type="Texture2D" uid="uid://c0aojebkwu1oe" path="res://assets/Treasure Hunters/Wood and Paper UI/Sprites/Life Bars/all.png" id="7_1w60h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8eelk"]
+atlas = ExtResource("7_1w60h")
+region = Rect2(0, 0, 96, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_653fe"]
+atlas = ExtResource("7_1w60h")
+region = Rect2(0, 32, 96, 32)
+
+[node name="player_ui" type="Control" unique_id=654759611]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="movement" type="Control" parent="." unique_id=1863908150]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+
+[node name="right" type="TouchScreenButton" parent="movement" unique_id=1437329868]
+position = Vector2(229, -139)
+scale = Vector2(4, 4)
+texture_normal = ExtResource("1_dvmud")
+action = "right"
+
+[node name="left" type="TouchScreenButton" parent="movement" unique_id=702579031]
+position = Vector2(58.999996, -139)
+scale = Vector2(4, 4)
+texture_normal = ExtResource("2_b4xfd")
+action = "left"
+
+[node name="action" type="Control" parent="." unique_id=2142644862]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="jump" type="TouchScreenButton" parent="action" unique_id=1441438123]
+position = Vector2(-227, -85)
+scale = Vector2(4, 4)
+texture_normal = ExtResource("3_sndr4")
+action = "jump"
+
+[node name="attack" type="TouchScreenButton" parent="action" unique_id=430162508]
+position = Vector2(-97, -205)
+scale = Vector2(4, 4)
+texture_normal = ExtResource("4_dje7x")
+action = "attack"
+
+[node name="interact" type="TouchScreenButton" parent="action" unique_id=930370703]
+position = Vector2(-357, -205)
+scale = Vector2(4, 4)
+texture_normal = ExtResource("5_dje7x")
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="action" unique_id=2059811782]
+position = Vector2(-227, -325)
+scale = Vector2(4, 4)
+texture_normal = ExtResource("6_gux5g")
+
+[node name="health_bar" type="Control" parent="." unique_id=468977239]
+layout_mode = 1
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="health_bar" type="TextureProgressBar" parent="health_bar" unique_id=1325785427]
+layout_mode = 0
+offset_left = 11.999999
+offset_top = -23.999998
+offset_right = 108.0
+offset_bottom = 16.000002
+scale = Vector2(5, 5)
+max_value = 3.0
+value = 3.0
+texture_under = SubResource("AtlasTexture_8eelk")
+texture_progress = SubResource("AtlasTexture_653fe")
